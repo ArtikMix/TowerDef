@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class EnemyLogic : MonoBehaviour
 {
     private NavMeshAgent agent;
-    private Transform house;
+    [SerializeField] private Transform house;
 
     private void Start()
     {
