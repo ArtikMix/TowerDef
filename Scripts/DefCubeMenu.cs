@@ -4,34 +4,36 @@ using UnityEngine;
 
 public class DefCubeMenu : MonoBehaviour
 {
-    [SerializeField] private GameObject shop_menu;
-    public void Active(string cube)
-    {
-        GameObject dc = null;
-        GameObject[] def_cubes = GameObject.FindGameObjectsWithTag("def_cube");
-        foreach(GameObject d in def_cubes)
-        {
-            if (d.transform.name == cube)
-            {
-                dc = d;
-                break;
-            }
-        }
-        shop_menu.SetActive(true);
-        Vector3 pos = new Vector3(dc.transform.position.x, dc.transform.position.y + 2f, dc.transform.position.z);
-        shop_menu.transform.position = pos;
-    }
+    [HideInInspector]
+    public Transform active_cube;
+    GameManager manager;
+    [SerializeField] private GameObject standart, massive, force;
 
+    private void Start()
+    {
+        manager = FindObjectOfType<GameManager>();
+    }
     private void Update()
     {
-        if (shop_menu.activeInHierarchy)
-        {
-            shop_menu.transform.LookAt(GameObject.FindGameObjectWithTag("MainCamera").transform.position);
-        }
+        transform.LookAt(GameObject.FindGameObjectWithTag("MainCamera").transform);
     }
 
     public void Close()
     {
-        
+        gameObject.SetActive(false);
+    }
+
+    public void BuyStandart()
+    {
+        //if (manager.money >= 150)
+        //{
+        //manager.AwayMoney(150);
+            Debug.Log("buy_standart");
+            Vector3 pos = new Vector3(active_cube.position.x, 0f, active_cube.position.z);
+            Quaternion qua = new Quaternion(0, 45f, 0, 0);
+            GameObject g = Instantiate(standart, pos, qua);
+            g.transform.SetParent(active_cube);
+            gameObject.SetActive(false);
+       // }
     }
 }
