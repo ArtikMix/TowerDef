@@ -5,18 +5,16 @@ using UnityEngine.AI;
 
 public class EnemyLogic : MonoBehaviour
 {
-    private NavMeshAgent agent;
+    [SerializeField] private NavMeshAgent agent;
     [SerializeField] private Transform house;
 
-    private void Start()
+    void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         house = GameObject.FindGameObjectWithTag("house").transform;
-        agent.speed = 2f;
-        agent.stoppingDistance = 0.5f;
     }
 
-    private void Update()
+    void Update()
     {
         agent.SetDestination(house.position);
     }

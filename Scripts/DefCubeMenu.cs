@@ -15,7 +15,7 @@ public class DefCubeMenu : MonoBehaviour
     }
     private void Update()
     {
-        transform.LookAt(GameObject.FindGameObjectWithTag("MainCamera").transform);
+        //transform.LookAt(GameObject.FindGameObjectWithTag("MainCamera").transform);
     }
 
     public void Close()

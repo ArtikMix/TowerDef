@@ -9,7 +9,7 @@ public class DefCube : MonoBehaviour, IPointerClickHandler
     void Start()
     {
         //menu = GameObject.FindGameObjectWithTag("def_menu");
-        menu.SetActive(false);
+        //menu.SetActive(false);
     }
 
     public void OnPointerClick(PointerEventData data)
