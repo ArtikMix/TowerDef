@@ -8,6 +8,8 @@ public class Shooting : MonoBehaviour
     private GameObject aim;
     private bool new_aim = true;
     [SerializeField] private GameObject standart_bullet, force_bullet, massive_bullet;
+    private float pace;//количество выстрелов в минуту
+    private int damage;
     [SerializeField] private enum Type
     {
         STANDART = 1,
@@ -16,9 +18,14 @@ public class Shooting : MonoBehaviour
     }
     Type type;
 
-    private void Start()
+    private void Awake()
     {
         house = GameObject.FindGameObjectWithTag("house").transform;
+        if (type == Type.STANDART)
+        {
+            damage = 10;
+            pace = 120;
+        }
     }
 
     private void Update() 
@@ -37,14 +44,21 @@ public class Shooting : MonoBehaviour
                 }
             }
         }
+        transform.LookAt(aim.transform.position);
     }
 
     IEnumerator Shoot()
     {
-        switch (type)
+        while (true)
         {
-            case Type.STANDART: Instantiate(standart_bullet, transform.position, transform.rotation);
-                break;
+            switch (type)
+            {
+                case Type.STANDART:
+                    GameObject bullet = Instantiate(standart_bullet, transform.position, transform.rotation);
+                    bullet.GetComponent<Bullet>().SetParametrs(damage, aim);
+                    break;
+            }
+            yield return new WaitForSeconds(60/pace);
         }
     }
 }

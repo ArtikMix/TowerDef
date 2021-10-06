@@ -7,6 +7,7 @@ public class EnemyLogic : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private Transform house;
+    private int health;
 
     void Start()
     {
@@ -17,5 +18,10 @@ public class EnemyLogic : MonoBehaviour
     void Update()
     {
         agent.SetDestination(house.position);
+    }
+
+    public void SetHealth()
+    {
+
     }
 }

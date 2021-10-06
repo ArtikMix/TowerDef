@@ -6,7 +6,6 @@ public class Tower : MonoBehaviour
 {
     private float pace;
     private int damage;
-    [SerializeField] private int type;
 
     private void Start()
     {
