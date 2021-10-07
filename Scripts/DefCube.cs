@@ -6,10 +6,15 @@ using UnityEngine.EventSystems;
 public class DefCube : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private GameObject menu;
+    
+    void Awake()
+    {
+        menu = GameObject.FindGameObjectWithTag("def_menu");
+    }
+
     void Start()
     {
-        //menu = GameObject.FindGameObjectWithTag("def_menu");
-        //menu.SetActive(false);
+        menu.SetActive(false);
     }
 
     public void OnPointerClick(PointerEventData data)

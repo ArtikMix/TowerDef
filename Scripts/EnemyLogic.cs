@@ -7,6 +7,7 @@ public class EnemyLogic : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private Transform house;
+    [SerializeField] private GameObject death_GX;
     private int health;
 
     void Start()
@@ -20,8 +21,18 @@ public class EnemyLogic : MonoBehaviour
         agent.SetDestination(house.position);
     }
 
-    public void SetHealth()
+    public void SetHealth(int h)
     {
+        health -= h;
+        if (health <= 0)
+        {
+            Death();
+        }
+    }
 
+    private void Death()
+    {
+        Instantiate(death_GX, transform.position, transform.rotation);
+        Destroy(gameObject);
     }
 }

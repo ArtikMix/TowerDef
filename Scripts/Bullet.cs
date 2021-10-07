@@ -13,14 +13,14 @@ public class Bullet : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3.MoveTowards(transform.position, aim.transform.position, 0f);
+        //Vector3.MoveTowards(transform.position, aim.transform.position, 10f*Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "enemy")
         {
-            //other.GetComponent<EnemyLogic>(). минус хп
+            other.GetComponent<EnemyLogic>().SetHealth(damage);
         }
     }
 
