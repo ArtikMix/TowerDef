@@ -8,7 +8,7 @@ public class EnemyLogic : MonoBehaviour
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private Transform house;
     [SerializeField] private GameObject death_GX;
-    private int health;
+    public int health;
 
     void Start()
     {

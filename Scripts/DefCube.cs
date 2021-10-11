@@ -28,7 +28,7 @@ public class DefCube : MonoBehaviour, IPointerClickHandler
     public void Active()
     {
         menu.SetActive(true);
-        menu.transform.position = new Vector3(transform.position.x, transform.position.y + 2f, transform.position.z);
+        //menu.transform.position = new Vector3(transform.position.x, transform.position.y + 2f, transform.position.z);
         menu.GetComponent<DefCubeMenu>().active_cube = transform;
     }
 }

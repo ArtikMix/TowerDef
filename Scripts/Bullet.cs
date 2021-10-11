@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
     private GameObject aim;
     private int damage;
+    private bool massive;
     private void Start()
     {
         
@@ -16,10 +17,22 @@ public class Bullet : MonoBehaviour
         //Vector3.MoveTowards(transform.position, aim.transform.position, 10f*Time.deltaTime);
     }
 
+    private void Update()
+    {
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "enemy")
         {
+            if (massive)
+            {
+                Collider[] col = Physics.OverlapSphere(other.transform.position, 10f);
+                foreach (Collider c in col)
+                {
+                    c.GetComponent<EnemyLogic>().SetHealth(damage / 2);
+                }
+            }
             other.GetComponent<EnemyLogic>().SetHealth(damage);
         }
     }
@@ -28,5 +41,12 @@ public class Bullet : MonoBehaviour
     {
         aim = a;
         damage = d;
+    }
+
+    public void SetParametrs(int d, GameObject a, bool m)
+    {
+        aim = a;
+        damage = d;
+        massive = m;
     }
 }
