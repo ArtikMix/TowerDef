@@ -289,6 +289,7 @@ GameObject:
   - component: {fileID: 1138051803049064963}
   - component: {fileID: 1138051803046214747}
   - component: {fileID: 1138051803046757339}
+  - component: {fileID: 4937922416650374402}
   m_Layer: 0
   m_Name: cannon
   m_TagString: Untagged
@@ -359,6 +360,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4937922416650374402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138051803049248467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af8b9bce2b3205147a3c0eca4a53bc52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  standart_bullet: {fileID: 6413328055019598172, guid: a2054900a39eaab4fb184e790ea6f05d, type: 3}
+  type: 1
 --- !u!1 &1138051803049263353
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,7 +385,6 @@ GameObject:
   - component: {fileID: 1138051803049050717}
   - component: {fileID: 1138051803046181965}
   - component: {fileID: 1138051803046768995}
-  - component: {fileID: 7274382942031185502}
   m_Layer: 0
   m_Name: rotater
   m_TagString: Untagged
@@ -442,21 +456,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7274382942031185502
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1138051803049263353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af8b9bce2b3205147a3c0eca4a53bc52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  standart_bullet: {fileID: 6413328055019598172, guid: a2054900a39eaab4fb184e790ea6f05d, type: 3}
-  force_bullet: {fileID: 0}
-  massive_bullet: {fileID: 0}
 --- !u!1 &1138051803049292689
 GameObject:
   m_ObjectHideFlags: 0

@@ -30,9 +30,13 @@ public class Shooting : MonoBehaviour
 
     private void Update() 
     {
+        if (aim == null)
+        {
+            new_aim = true;
+        }
         if (type == Type.STANDART && new_aim == true)
         {
-            Collider[] col = Physics.OverlapSphere(transform.position, 10f);
+            Collider[] col = Physics.OverlapSphere(transform.position, 15f);
             for(int i = 0; i<col.Length; i++)
             {
                 if (col[i].tag == "enemy")
@@ -72,7 +76,7 @@ public class Shooting : MonoBehaviour
                 }
             }
         }
-        transform.LookAt(aim.transform.position);
+        transform.LookAt(aim.transform.position);//селжение за монстром, по которому ведётся огонь
     }
 
     IEnumerator Shoot()

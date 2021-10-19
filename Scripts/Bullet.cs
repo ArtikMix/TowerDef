@@ -14,7 +14,7 @@ public class Bullet : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //Vector3.MoveTowards(transform.position, aim.transform.position, 10f*Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, aim.transform.position, 1f);
     }
 
     private void Update()
