@@ -10,6 +10,7 @@ public class Shooting : MonoBehaviour
     [SerializeField] private GameObject standart_bullet;
     private float pace;//количество выстрелов в минуту
     private int damage;
+    private bool shoot = true;
     public enum Type
     {
         STANDART = 1,
@@ -47,6 +48,10 @@ public class Shooting : MonoBehaviour
                     break;
                 }
             }
+            if (aim == null)
+                shoot = false;
+            else if (aim != null)
+                shoot = true;
         }
         if (type == Type.FORCE && new_aim == true)
         {
@@ -76,12 +81,13 @@ public class Shooting : MonoBehaviour
                 }
             }
         }
-        transform.LookAt(aim.transform.position);//селжение за монстром, по которому ведётся огонь
+        if (aim!=null)
+            transform.LookAt(aim.transform.position);//селжение за монстром, по которому ведётся огонь
     }
 
     IEnumerator Shoot()
     {
-        while (true)
+        while (shoot)
         {
             switch (type)
             {

@@ -19,8 +19,11 @@ public class EnemyLogic : MonoBehaviour
 
     void Update()
     {
-        if (Vector3.Distance(transform.position, house.position)>=1f)
+        if (Vector3.Distance(transform.position, house.position) >= 1f)
+        {
+            Debug.Log("Enemy " + transform.name + " far from house.");
             agent.SetDestination(house.position);
+        } 
     }
 
     public void SetHealth(int h)

@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
     private GameObject aim;
     private int damage;
     private bool massive;
+
     private void Start()
     {
         
@@ -14,7 +15,8 @@ public class Bullet : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.position = Vector3.MoveTowards(transform.position, aim.transform.position, 1f);
+        if (aim != null)
+            transform.position = Vector3.MoveTowards(transform.position, aim.transform.position, 1f);
     }
 
     private void Update()
@@ -35,6 +37,7 @@ public class Bullet : MonoBehaviour
             }
             other.GetComponent<EnemyLogic>().SetHealth(damage);
         }
+        Destroy(gameObject, 1f);
     }
 
     public void SetParametrs(int d, GameObject a)
