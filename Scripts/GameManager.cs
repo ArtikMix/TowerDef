@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public int money;
+    private int money;
 
     public void AddMoney(int m)
     {
@@ -14,5 +14,13 @@ public class GameManager : MonoBehaviour
     public void AwayMoney(int m)
     {
         money -= m;
+    }
+
+    public bool CheckMoney(int m)
+    {
+        if (money >= m)
+            return true;
+        else
+            return false;
     }
 }

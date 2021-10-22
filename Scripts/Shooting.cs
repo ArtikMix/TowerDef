@@ -8,7 +8,7 @@ public class Shooting : MonoBehaviour
     private GameObject aim;
     private bool new_aim = true;
     [SerializeField] private GameObject standart_bullet;
-    private float pace;//количество выстрелов в минуту
+    private int pace;//количество выстрелов в минуту
     private int damage;
     private bool shoot = true;
     public enum Type
@@ -66,6 +66,10 @@ public class Shooting : MonoBehaviour
                     break;
                 }
             }
+            if (aim == null)
+                shoot = false;
+            else if (aim != null)
+                shoot = true;
         }  
         if (type == Type.MASSIVE && new_aim == true)
         {
@@ -80,6 +84,10 @@ public class Shooting : MonoBehaviour
                     break;
                 }
             }
+            if (aim == null)
+                shoot = false;
+            else if (aim != null)
+                shoot = true;
         }
         if (aim!=null)
             transform.LookAt(aim.transform.position);//селжение за монстром, по которому ведётся огонь

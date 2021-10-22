@@ -25,22 +25,23 @@ public class DefCubeMenu : MonoBehaviour
 
     public void BuyStandart()
     {
-        //if (manager.money >= 150)
-        //{
-        //manager.AwayMoney(150);
-            Debug.Log("buy_standart");
-            Vector3 pos = new Vector3(active_cube.position.x, 0f, active_cube.position.z);
-            Quaternion qua = new Quaternion(0, 45f, 0, 0);
-            GameObject g = Instantiate(standart, pos, qua);
-            g.transform.GetChild(3).transform.GetChild(0).GetComponent<Shooting>().type = Shooting.Type.STANDART;
-            g.transform.SetParent(active_cube);
-            gameObject.SetActive(false);
-       // }
+            if (manager.CheckMoney(150))
+            {
+                manager.AwayMoney(150);
+                Debug.Log("buy_standart");
+                Vector3 pos = new Vector3(active_cube.position.x, 0f, active_cube.position.z);
+                Quaternion qua = new Quaternion(0, 45f, 0, 0);
+                GameObject g = Instantiate(standart, pos, qua);
+                g.transform.GetChild(3).transform.GetChild(0).GetComponent<Shooting>().type = Shooting.Type.STANDART;
+                g.transform.SetParent(active_cube);
+                gameObject.SetActive(false);
+            }
+
     }
 
     public void BuyForce()
     {
-        if (manager.money >= 200)
+        if (manager.CheckMoney(200))
         {
             manager.AwayMoney(200);
             Debug.Log("buy_force");
@@ -55,7 +56,7 @@ public class DefCubeMenu : MonoBehaviour
 
     public void BuyMassive()
     {
-        if (manager.money >= 300)
+        if (manager.CheckMoney(300))
         {
             manager.AwayMoney(300);
             Debug.Log("buy_massive");
