@@ -25,6 +25,6 @@ public class CameraRotation : MonoBehaviour
 
     private void LateUpdate()
     {
-        transform.LookAt(target.position + Vector3.up * pitch);
+        transform.RotateAround(target.position, Vector3.up, yawInput);
     }
 }
