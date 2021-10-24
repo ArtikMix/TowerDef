@@ -1301,6 +1301,7 @@ GameObject:
   - component: {fileID: 174321580}
   - component: {fileID: 174321582}
   - component: {fileID: 174321581}
+  - component: {fileID: 174321583}
   m_Layer: 5
   m_Name: Buy
   m_TagString: Untagged
@@ -1366,6 +1367,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 174321579}
   m_CullTransparentMesh: 1
+--- !u!114 &174321583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174321579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 0
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 174321581}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1960421193}
+        m_TargetAssemblyTypeName: SupportCubeMenu, Assembly-CSharp
+        m_MethodName: Buy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &197203782
 GameObject:
   m_ObjectHideFlags: 0
@@ -2076,7 +2133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a8471c521a012545b3f205054f4ed59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  support_menu: {fileID: 0}
 --- !u!65 &378352930
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2742,7 +2798,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a8471c521a012545b3f205054f4ed59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  support_menu: {fileID: 0}
 --- !u!65 &533391856
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6330,7 +6385,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a8471c521a012545b3f205054f4ed59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  support_menu: {fileID: 0}
 --- !u!65 &1270558116
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6635,7 +6689,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a8471c521a012545b3f205054f4ed59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  support_menu: {fileID: 0}
 --- !u!65 &1352184075
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8941,9 +8994,10 @@ GameObject:
   - component: {fileID: 1960421190}
   - component: {fileID: 1960421192}
   - component: {fileID: 1960421191}
+  - component: {fileID: 1960421193}
   m_Layer: 5
-  m_Name: Support_Cube
-  m_TagString: Untagged
+  m_Name: Support_Cube_Menu
+  m_TagString: sup_menu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9007,6 +9061,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1960421189}
   m_CullTransparentMesh: 1
+--- !u!114 &1960421193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960421189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f70c36c27bb5f9e429f52cf370c3908c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sup_b: {fileID: 1326093064322132, guid: a425124410f363a43adb6788601cc3e0, type: 3}
 --- !u!1 &1974724916
 GameObject:
   m_ObjectHideFlags: 0
@@ -9239,6 +9306,7 @@ GameObject:
   - component: {fileID: 2010927032}
   - component: {fileID: 2010927034}
   - component: {fileID: 2010927033}
+  - component: {fileID: 2010927035}
   m_Layer: 5
   m_Name: Close
   m_TagString: Untagged
@@ -9303,6 +9371,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2010927031}
   m_CullTransparentMesh: 1
+--- !u!114 &2010927035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010927031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 0
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 2010927033}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1960421193}
+        m_TargetAssemblyTypeName: SupportCubeMenu, Assembly-CSharp
+        m_MethodName: Close
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2023108996
 GameObject:
   m_ObjectHideFlags: 0
@@ -9798,7 +9922,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a8471c521a012545b3f205054f4ed59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  support_menu: {fileID: 0}
 --- !u!65 &2145868965
 BoxCollider:
   m_ObjectHideFlags: 0

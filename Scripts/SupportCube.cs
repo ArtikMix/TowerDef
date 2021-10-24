@@ -5,7 +5,13 @@ using UnityEngine.EventSystems;
 
 public class SupportCube : MonoBehaviour, IPointerClickHandler
 {
-    [SerializeField] private GameObject support_menu;
+    private GameObject support_menu;
+
+    void Awake()
+    {
+        support_menu = GameObject.FindGameObjectWithTag("sup_menu");
+    }
+
     public void OnPointerClick(PointerEventData data)
     {
         support_menu.SetActive(true);
