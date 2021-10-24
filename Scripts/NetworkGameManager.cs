@@ -22,6 +22,7 @@ public class NetworkGameManager : MonoBehaviourPunCallbacks
             Time.timeScale = 1f;
             waiting.SetActive(false);
         }
+        Debug.Log(PhotonNetwork.PlayerList.Length);
     }
 
     public void CopyRoom()
