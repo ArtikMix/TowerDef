@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class Bullet : MonoBehaviour
 {
@@ -38,7 +39,7 @@ public class Bullet : MonoBehaviour
             }
             other.GetComponent<EnemyLogic>().SetHealth(damage);
         }
-        Destroy(gameObject, 1f);
+        PhotonNetwork.Destroy(gameObject);
     }
 
     public void SetParametrs(int d, GameObject a)

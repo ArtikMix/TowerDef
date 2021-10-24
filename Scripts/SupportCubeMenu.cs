@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class SupportCubeMenu : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class SupportCubeMenu : MonoBehaviour
         if (manager.CheckMoney(350))
         {
             manager.AwayMoney(350);
-            Instantiate(sup_b, pos, Quaternion.identity);
+            PhotonNetwork.Instantiate(sup_b.name, pos, Quaternion.identity);
         }
     }
 

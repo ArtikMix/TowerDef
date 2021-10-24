@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class DefCubeMenu : MonoBehaviour
 {
@@ -31,7 +32,7 @@ public class DefCubeMenu : MonoBehaviour
                 Debug.Log("buy_standart");
                 Vector3 pos = new Vector3(active_cube.position.x, 0f, active_cube.position.z);
                 Quaternion qua = new Quaternion(0, 45f, 0, 0);
-                GameObject g = Instantiate(standart, pos, qua);
+                GameObject g = PhotonNetwork.Instantiate(standart.name, pos, qua);
                 g.transform.GetChild(3).transform.GetChild(0).GetComponent<Shooting>().type = Shooting.Type.STANDART;
                 g.transform.SetParent(active_cube);
                 gameObject.SetActive(false);
@@ -47,7 +48,7 @@ public class DefCubeMenu : MonoBehaviour
             Debug.Log("buy_force");
             Vector3 pos = new Vector3(active_cube.position.x, 0f, active_cube.position.z);
             Quaternion qua = new Quaternion(0, 45f, 0, 0);
-            GameObject g = Instantiate(force, pos, qua);
+            GameObject g = PhotonNetwork.Instantiate(force.name, pos, qua);
             g.transform.GetChild(3).transform.GetChild(0).GetComponent<Shooting>().type = Shooting.Type.FORCE;
             g.transform.SetParent(active_cube);
             gameObject.SetActive(false);
@@ -62,7 +63,7 @@ public class DefCubeMenu : MonoBehaviour
             Debug.Log("buy_massive");
             Vector3 pos = new Vector3(active_cube.position.x, 0f, active_cube.position.z);
             Quaternion qua = new Quaternion(0, 45f, 0, 0);
-            GameObject g = Instantiate(massive, pos, qua);
+            GameObject g = PhotonNetwork.Instantiate(massive.name, pos, qua);
             g.transform.GetChild(3).transform.GetChild(0).GetComponent<Shooting>().type = Shooting.Type.MASSIVE;
             g.transform.SetParent(active_cube);
             gameObject.SetActive(false);

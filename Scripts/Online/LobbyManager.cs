@@ -7,6 +7,9 @@ using UnityEngine.UI;
 public class LobbyManager : MonoBehaviourPunCallbacks
 {
     [SerializeField] private Text log;
+    [SerializeField] private Text enter;
+    [SerializeField] private GameObject re;
+
     private void Start()
     {
         PhotonNetwork.NickName = "Player" + Random.Range(100, 998);
@@ -31,12 +34,39 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     {
         Log("Creating room");
         int roomNumber = Random.Range(100, 998);
+        PhotonNetwork.CreateRoom("Room" + roomNumber, new Photon.Realtime.RoomOptions { MaxPlayers = 2 });
+        PhotonNetwork.LoadLevel("Game_1");
+    }
 
-        PhotonNetwork.CreateRoom("Room" + roomNumber);
+    public void JoinRoom()
+    {
+        Log("Connecting to room: " + enter.text);
+        PhotonNetwork.JoinRoom(enter.text);
     }
 
     public override void OnCreatedRoom()
     {
         Log("Room created");
+    }
+
+    public override void OnJoinedRoom()
+    {
+        Log("Joined to room");
+        PhotonNetwork.LoadLevel("Game_1");
+    }
+
+    public override void OnCreateRoomFailed(short returnCode, string message)
+    {
+        Log("Creating room failed");
+    }
+
+    public void Activate()
+    {
+        re.SetActive(true);
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
     }
 }

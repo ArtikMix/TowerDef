@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class Shooting : MonoBehaviour
 {
@@ -100,15 +101,15 @@ public class Shooting : MonoBehaviour
             switch (type)
             {
                 case Type.STANDART:
-                    GameObject bullet0 = Instantiate(standart_bullet, transform.position, transform.rotation);
+                    GameObject bullet0 = PhotonNetwork.Instantiate(standart_bullet.name, transform.position, transform.rotation);
                     bullet0.GetComponent<Bullet>().SetParametrs(damage, aim);
                     break;
                 case Type.FORCE:
-                    GameObject bullet1 = Instantiate(standart_bullet, transform.position, transform.rotation);
+                    GameObject bullet1 = PhotonNetwork.Instantiate(standart_bullet.name, transform.position, transform.rotation);
                     bullet1.GetComponent<Bullet>().SetParametrs(damage, aim);
                     break;
                 case Type.MASSIVE:
-                    GameObject bullet2 = Instantiate(standart_bullet, transform.position, transform.rotation);
+                    GameObject bullet2 = PhotonNetwork.Instantiate(standart_bullet.name, transform.position, transform.rotation);
                     bullet2.GetComponent<Bullet>().SetParametrs(damage, aim);
                     break;
             }

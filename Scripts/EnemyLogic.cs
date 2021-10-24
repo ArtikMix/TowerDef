@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Photon.Pun;
 
 public class EnemyLogic : MonoBehaviour
 {
@@ -37,7 +38,7 @@ public class EnemyLogic : MonoBehaviour
 
     private void Death()
     {
-        Instantiate(death_GX, transform.position, transform.rotation);
+        PhotonNetwork.Instantiate(death_GX.name, transform.position, transform.rotation);
         Destroy(gameObject);
     }
 }
