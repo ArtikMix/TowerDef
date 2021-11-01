@@ -8,10 +8,20 @@ public class NetworkGameManager : MonoBehaviourPunCallbacks
 {
     bool once = true;
     [SerializeField] private GameObject waiting;
+    //[SerializeField] private GameObject player_1, player_2;
 
     private void Start()
     {
-        //Time.timeScale = 0f;
+        Time.timeScale = 0f;
+        /*if (PhotonNetwork.PlayerList.Length == 1)
+        {
+            PhotonNetwork.Instantiate(player_1.name, new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 0));
+        }
+        else if (PhotonNetwork.PlayerList.Length == 2)
+        {
+            PhotonNetwork.Instantiate(player_2.name, new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 0));
+        }*/
+
     }
 
     private void Update()
